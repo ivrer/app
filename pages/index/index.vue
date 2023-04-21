@@ -11,30 +11,21 @@
 		</view>
 		
 		<MyRecommend></MyRecommend>
+		<MyCard title="猜你喜欢"></MyCard>
 		
 	</view>
 
 </template>
 
-<script>
+<script setup>
 	import MySwiper from '../../components/swiper/index.vue';
 	import MyNavBar from '@/components/navbar/index.vue';
 	import MyRecommend from '@/components/recommend/index.vue'
-	export default {
-		data() {
-			return {
-				title: 'Helloxczxc'
-			}
-		},
-		components:{MySwiper,MyNavBar,MyRecommend},
-		onLoad() {
+	import MyCard from '@/components/Card/Card.vue'
+	import {defineComponent} from 'vue'
+	defineComponent({MySwiper,MyCard,MyNavBar,MyRecommend})
 
-		},
 	
-		methods: {
-
-		}
-	}
 </script>
 
 <style lang="scss">

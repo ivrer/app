@@ -1,0 +1,1 @@
+<view class="card-wrap"><view class="card-title"><text>{{a}}</text></view><view class="card-list"><my-card-item u-i="24ecb40a-0" bind:__l="__l"></my-card-item><my-card-item u-i="24ecb40a-1" bind:__l="__l"></my-card-item><my-card-item u-i="24ecb40a-2" bind:__l="__l"></my-card-item><my-card-item u-i="24ecb40a-3" bind:__l="__l"></my-card-item></view></view>
