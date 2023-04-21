@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "new商",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "my-swiper": "../../components/swiper/index",
+    "my-nav-bar": "../../components/navbar/index",
+    "my-recommend": "../../components/recommend/index"
+  }
+}

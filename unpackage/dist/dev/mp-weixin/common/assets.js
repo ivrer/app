@@ -1,0 +1,15 @@
+"use strict";
+const _imports_0 = "/assets/shirt1.24f5e4a0.png";
+const _imports_1 = "/assets/shot1.82f5c362.jpg";
+const _imports_2 = "/assets/shot2.217bbd0b.png";
+const _imports_3 = "/assets/shirt2.804528cd.png";
+const _imports_4 = "/assets/shirt4.1d5d3fec.png";
+const _imports_5 = "/assets/shot4.81daefee.png";
+const _imports_6 = "/assets/shot3.71c645ac.jpg";
+exports._imports_0 = _imports_0;
+exports._imports_1 = _imports_1;
+exports._imports_2 = _imports_2;
+exports._imports_3 = _imports_3;
+exports._imports_4 = _imports_4;
+exports._imports_5 = _imports_5;
+exports._imports_6 = _imports_6;

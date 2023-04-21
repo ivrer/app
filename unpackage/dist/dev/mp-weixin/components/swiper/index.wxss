@@ -1,0 +1,9 @@
+
+.swiper.data-v-12acdff0{
+		background-color: red;
+		height: 500rpx;
+}
+image.data-v-12acdff0{
+	 display: block;
+	 width: 100%;
+}

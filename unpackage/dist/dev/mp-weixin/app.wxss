@@ -1,0 +1,39 @@
+
+	/*每个页面公共css */
+@font-face {
+  font-family: "iconfont"; /* Project id 4024289 */
+  src: url('//at.alicdn.com/t/c/font_4024289_d4y9yc8zkzb.woff2?t=1681996498780') format('woff2');
+/*  src: url('iconfont.woff2?t=1681999674488') format('woff2'),
+       url('iconfont.woff?t=1681999674488') format('woff'),
+       url('iconfont.ttf?t=1681999674488') format('truetype'); */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-xinxi:before {
+  content: "\e763";
+}
+.icon-sousuo:before {
+  content: "\e6a8";
+}
+.icon-gouwuchekong:before {
+  content: "\e600";
+}
+.icon-fenlei:before {
+  content: "\e62f";
+}
+.icon-gouwuche:before {
+  content: "\e607";
+}
+.icon-wode:before {
+  content: "\e67e";
+}
+.swiper-img{
+		width: 100%;
+}
+
+page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}
