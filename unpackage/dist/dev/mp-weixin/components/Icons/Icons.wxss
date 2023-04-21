@@ -23,40 +23,35 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.card-item {
-  width: 50%;
-  float: left;
-}
-.card-item .item-img image {
+.icons {
   width: 100%;
   height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.card-item .item-text {
-  text-align: center;
-  height: 150rpx;
+.icons-item {
+  width: 25%;
+  height: 140rpx;
 }
-.card-item .item-text text {
-  -webkit-font-smoothing: antialiased;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  word-break: break-all;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+.icons-item .container {
+  width: 100rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.card-item .item-text .item-price {
+.icons-item .container image {
   width: 100%;
-  color: black;
+  height: 100rpx;
+  border: solid 1rpx black;
+  border-radius: 20rpx;
 }
-.card-item .item-text .item-price .price-unit {
-  width: 50rpx;
-  float: left;
-  margin-left: 80rpx;
-}
-.card-item .item-text .item-price .price {
-  width: 80rpx;
+.icons-item .container text {
+  text-align: center;
+  width: 100%;
+  height: 40rpx;
+  font-size: 25rpx;
 }

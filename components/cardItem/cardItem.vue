@@ -1,5 +1,5 @@
 <template>
-	<view class="card-item">
+	<view class="card-item" :style="{width:`${widthX}`}">
 		<view class="item-img">
 			<image src="../recommend/images/shot4.png" mode=""></image>
 		</view>
@@ -18,23 +18,18 @@
 
 </template>
 
-<script>
-	export default {
-		name:"cardItem",
-		data() {
-			return {
-				
-			};
-		}
-	}
+<script setup >
+	import {defineProps} from 'vue'
+	let {widthX='50%'} = defineProps(["widthX"])
+	console.log('jieshou',widthX)
 </script>
 
 <style lang="scss">
 
 	.card-item{
-		width: 300rpx;
+		width: 50%;
 		float: left;
-		margin: 0 35rpx;
+		// margin: 0 10rpx;
 		.item-img{
 			image{
 				width: 100%;

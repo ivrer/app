@@ -6,6 +6,9 @@
     "my-swiper": "../../components/swiper/index",
     "my-nav-bar": "../../components/navbar/index",
     "my-recommend": "../../components/recommend/index",
-    "my-card": "../../components/Card/Card"
+    "my-card": "../../components/Card/Card",
+    "my-banner": "../../components/Banner/Banner",
+    "my-icons": "../../components/Icons/Icons",
+    "my-hot": "../../components/Hot/Hot"
   }
 }

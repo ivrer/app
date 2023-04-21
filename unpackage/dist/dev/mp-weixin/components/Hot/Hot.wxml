@@ -1,0 +1,1 @@
+<view><my-card wx:if="{{a}}" u-i="2d9a44d2-0" bind:__l="__l" u-p="{{a}}"></my-card></view>

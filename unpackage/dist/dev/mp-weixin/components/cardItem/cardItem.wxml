@@ -1,1 +1,1 @@
-<view class="card-item"><view class="item-img"><image src="{{a}}" mode=""></image></view><view class="item-text"><text> "dasdasdasdasdasdasdasdasdasdasd" </text><text class="item-price"><text class="price-unit">Y</text><text class="price">299</text></text></view></view>
+<view class="card-item" style="{{'width:' + b}}"><view class="item-img"><image src="{{a}}" mode=""></image></view><view class="item-text"><text> "dasdasdasdasdasdasdasdasdasdasd" </text><text class="item-price"><text class="price-unit">Y</text><text class="price">299</text></text></view></view>

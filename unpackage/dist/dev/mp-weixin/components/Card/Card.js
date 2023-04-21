@@ -6,12 +6,24 @@ if (!Math) {
 const MyCardItem = () => "../cardItem/cardItem.js";
 const _sfc_main = {
   __name: "Card",
-  props: ["title"],
+  props: ["title", "widthX"],
   setup(__props) {
     common_vendor.defineComponent({ MyCardItem });
     return (_ctx, _cache) => {
       return {
-        a: common_vendor.t("—" + __props.title + "—")
+        a: common_vendor.t("—" + __props.title + "—"),
+        b: common_vendor.p({
+          widthX: __props.widthX
+        }),
+        c: common_vendor.p({
+          widthX: __props.widthX
+        }),
+        d: common_vendor.p({
+          widthX: __props.widthX
+        }),
+        e: common_vendor.p({
+          widthX: __props.widthX
+        })
       };
     };
   }

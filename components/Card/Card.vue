@@ -4,10 +4,10 @@
 			<text>{{"—" + title + "—"}}</text>
 		</view>
 		<view class="card-list">
-			<MyCardItem></MyCardItem>
-			<MyCardItem></MyCardItem>
-			<MyCardItem></MyCardItem>
-			<MyCardItem></MyCardItem>
+			<MyCardItem :widthX="widthX"></MyCardItem>
+			<MyCardItem :widthX="widthX"></MyCardItem>
+			<MyCardItem :widthX="widthX"></MyCardItem>
+			<MyCardItem :widthX="widthX"></MyCardItem>
 		</view>
 	</view>
 </template>
@@ -16,7 +16,9 @@
 	import MyCardItem from '@/components/cardItem/cardItem.vue'
 	import {defineComponent, defineProps} from 'vue'
 	defineComponent({MyCardItem})
-	let {title} = defineProps(["title"])
+	
+	let {title,widthX="50%"} = defineProps(["title","widthX"])
+
 	
 
 </script>
