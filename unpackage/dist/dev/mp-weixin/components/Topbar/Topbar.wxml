@@ -1,0 +1,1 @@
+<view><scroll-view scroll-x="true" class="scroll-wrap" scroll-into-view="{{b}}"><view wx:for="{{a}}" wx:for-item="el" wx:key="d" class="scroll-item" id="{{el.c}}" bindtap="{{el.e}}"><text class="{{el.b}}">{{el.a}}</text></view></scroll-view></view>

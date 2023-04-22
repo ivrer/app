@@ -3,34 +3,37 @@
 <!-- #ifdef MP-WEIXIN -->
 		<MyNavBar></MyNavBar>
 <!-- #endif -->
+			<view class="topbar">
+				<MyTopbar></MyTopbar>
+			</view>
+			<swiper class="content-wrap" >
+				<swiper-item>
+					<view class="content">
+						<view class="siwper-wrap">
+							<MySwiper></MySwiper>	
+						</view>
+						<view class="banner-wrap">
+							<MyBanner></MyBanner>
+						</view>
+						<view class="icons-wrap">
+							<MyIcons></MyIcons>
+						</view>
+						<view class="recommend-wrap">
+							<MyRecommend></MyRecommend>
+						</view>
+						<view class="card-wrap">
+							<MyCard title="猜你喜欢"></MyCard>			
+						</view>
+						<view class="hot-wrap">
+							<MyHot></MyHot>
+						</view>
+						<view class="shop-wrap">
+							<MyShop></MyShop>
+						</view>
+					</view>
+				</swiper-item>
+			</swiper>
 
-		<view class="content">
-			<view class="siwper-wrap">
-				<MySwiper></MySwiper>	
-			</view>
-			<view class="banner-wrap">
-				<MyBanner></MyBanner>
-			</view>
-			<view class="icons-wrap">
-				<MyIcons></MyIcons>
-			</view>
-			<view class="recommend-wrap">
-				<MyRecommend></MyRecommend>
-			</view>
-			<view class="card-wrap">
-				<MyCard title="猜你喜欢"></MyCard>			
-			</view>
-			<view class="hot-wrap">
-				<MyHot></MyHot>
-			</view>
-			<view class="shop-wrap">
-				<MyShop></MyShop>
-			</view>
-		</view>
-
-
-
-		
 	</view>
 
 </template>
@@ -44,25 +47,30 @@
 	import MyIcons from '@/components/Icons/Icons.vue'
 	import MyHot from '@/components/Hot/Hot.vue'
 	import MyShop from '@/components/common/shop.vue'
+	import MyTopbar from '@/components/Topbar/Topbar.vue'
 	
 	import {defineComponent} from 'vue'
-	defineComponent({MySwiper,MyCard,MyNavBar,MyRecommend,MyBanner,MyIcons,MyHot,MyShop})
+	defineComponent({MySwiper,MyCard,MyNavBar,MyRecommend,MyBanner,MyIcons,MyHot,MyShop,MyTopbar})
 
 	
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-	.swiper-wrap{
-			background-color: red;
-	}
+
 	.status-bar{
 		height: 100rpx;
 		width: 100%;
 	
 	}
-	.content{
-
+	.content-wrap{
+		
+		.swiper-item{
+			width: 100%;
+			.content{
+			}
+		}
 	}
+
 
 </style>

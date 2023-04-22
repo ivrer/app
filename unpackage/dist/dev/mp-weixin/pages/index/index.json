@@ -10,6 +10,7 @@
     "my-banner": "../../components/Banner/Banner",
     "my-icons": "../../components/Icons/Icons",
     "my-hot": "../../components/Hot/Hot",
-    "my-shop": "../../components/common/shop"
+    "my-shop": "../../components/common/shop",
+    "my-topbar": "../../components/Topbar/Topbar"
   }
 }

@@ -23,10 +23,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.status-bar.data-v-1cf27b2a {
-  height: 100rpx;
+.scroll-wrap {
   width: 100%;
+  height: 50rpx;
+  white-space: nowrap;
+  background-color: red;
 }
-.content-wrap .swiper-item.data-v-1cf27b2a {
-  width: 100%;
+.scroll-wrap .scroll-item {
+  display: inline-block;
+  width: 150rpx;
+  background-color: orange;
+}
+.scroll-wrap .scroll-item .peace {
+  color: black;
+}
+.scroll-wrap .scroll-item .activeText {
+  color: red;
 }
