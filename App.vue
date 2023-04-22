@@ -19,5 +19,7 @@
 	.swiper-img{
 		width: 100%;
 	}
+	
+	/* 隐藏滚动条 */
 
 </style>

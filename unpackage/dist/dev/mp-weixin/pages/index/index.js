@@ -1,7 +1,7 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 if (!Math) {
-  (MyNavBar + MySwiper + MyBanner + MyIcons + MyRecommend + MyCard + MyHot)();
+  (MyNavBar + MySwiper + MyBanner + MyIcons + MyRecommend + MyCard + MyHot + MyShop)();
 }
 const MySwiper = () => "../../components/swiper/index.js";
 const MyNavBar = () => "../../components/navbar/index.js";
@@ -10,10 +10,11 @@ const MyCard = () => "../../components/Card/Card.js";
 const MyBanner = () => "../../components/Banner/Banner.js";
 const MyIcons = () => "../../components/Icons/Icons.js";
 const MyHot = () => "../../components/Hot/Hot.js";
+const MyShop = () => "../../components/common/shop.js";
 const _sfc_main = {
   __name: "index",
   setup(__props) {
-    common_vendor.defineComponent({ MySwiper, MyCard, MyNavBar, MyRecommend, MyBanner, MyIcons, MyHot });
+    common_vendor.defineComponent({ MySwiper, MyCard, MyNavBar, MyRecommend, MyBanner, MyIcons, MyHot, MyShop });
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({

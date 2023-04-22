@@ -4,11 +4,14 @@ if (!Math) {
   MyCardItem();
 }
 const MyCardItem = () => "../cardItem/cardItem.js";
+const MyBanner = () => "../Banner/Banner.js";
 const _sfc_main = {
   __name: "Card",
   props: ["title", "widthX"],
   setup(__props) {
-    common_vendor.defineComponent({ MyCardItem });
+    const { title, widthX = "50%" } = __props;
+    common_vendor.defineComponent({ MyCardItem, MyBanner });
+    console.log(widthX, "widthX-card");
     return (_ctx, _cache) => {
       return {
         a: common_vendor.t("—" + __props.title + "—"),

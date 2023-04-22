@@ -3,14 +3,13 @@ const common_assets = require("../../common/assets.js");
 const common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
   __name: "cardItem",
-  props: ["widthX"],
+  props: ["widthX", "imgH"],
   setup(__props) {
-    const { widthX = "50%" } = __props;
-    console.log("jieshou", widthX);
     return (_ctx, _cache) => {
       return {
         a: common_assets._imports_0$1,
-        b: `${__props.widthX}`
+        b: `${__props.imgH}`,
+        c: `${__props.widthX}`
       };
     };
   }

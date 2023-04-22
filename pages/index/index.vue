@@ -23,6 +23,9 @@
 			<view class="hot-wrap">
 				<MyHot></MyHot>
 			</view>
+			<view class="shop-wrap">
+				<MyShop></MyShop>
+			</view>
 		</view>
 
 
@@ -40,9 +43,10 @@
 	import MyBanner from '@/components/Banner/Banner.vue'
 	import MyIcons from '@/components/Icons/Icons.vue'
 	import MyHot from '@/components/Hot/Hot.vue'
+	import MyShop from '@/components/common/shop.vue'
 	
 	import {defineComponent} from 'vue'
-	defineComponent({MySwiper,MyCard,MyNavBar,MyRecommend,MyBanner,MyIcons,MyHot})
+	defineComponent({MySwiper,MyCard,MyNavBar,MyRecommend,MyBanner,MyIcons,MyHot,MyShop})
 
 	
 </script>

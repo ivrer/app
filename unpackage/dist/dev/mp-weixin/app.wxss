@@ -1,5 +1,12 @@
 
 	/*每个页面公共css */
+::-webkit-scrollbar {  
+	    display: none;  
+	    width: 0 !important;  
+	    height: 0 !important;  
+	    -webkit-appearance: none;  
+	    background: green;
+}
 @font-face {
   font-family: "iconfont"; /* Project id 4024289 */
   src: url('//at.alicdn.com/t/c/font_4024289_d4y9yc8zkzb.woff2?t=1681996498780') format('woff2');
@@ -35,5 +42,6 @@
 .swiper-img{
 		width: 100%;
 }
+	/* 隐藏滚动条 */
 
 page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}

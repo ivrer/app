@@ -23,26 +23,23 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.card-item {
-  float: left;
-  width: 50%;
+.card-wrap .card-title.data-v-886e3790 {
+  height: 100rpx;
+  width: 200rpx;
+  line-height: 100rpx;
+  margin: 0 auto;
+  font-weight: bold;
 }
-.card-item .item-img image {
-  width: 100%;
+.card-wrap .scroll-wrap.data-v-886e3790 {
+  white-space: nowrap;
 }
-.card-item .item-text {
-  text-align: center;
-  height: 150rpx;
+.card-wrap .scroll-wrap .scroll-item.data-v-886e3790 {
+  display: inline-block;
+  width: 200rpx;
 }
-.card-item .item-text .item-title {
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  word-break: break-all;
+.card-wrap .card-list.data-v-886e3790::after {
+  clear: both;
+  display: block;
+  content: "";
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 }

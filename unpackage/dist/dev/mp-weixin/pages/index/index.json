@@ -9,6 +9,7 @@
     "my-card": "../../components/Card/Card",
     "my-banner": "../../components/Banner/Banner",
     "my-icons": "../../components/Icons/Icons",
-    "my-hot": "../../components/Hot/Hot"
+    "my-hot": "../../components/Hot/Hot",
+    "my-shop": "../../components/common/shop"
   }
 }

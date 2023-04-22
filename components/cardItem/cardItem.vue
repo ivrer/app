@@ -1,17 +1,16 @@
 <template>
 	<view class="card-item" :style="{width:`${widthX}`}">
 		<view class="item-img">
-			<image src="../recommend/images/shot4.png" mode=""></image>
+			<image src="../recommend/images/shot4.png" mode="" :style="{height:`${imgH}`}"></image>
 		</view>
 		<view class="item-text">
-			<text>
+			<text class="item-title">
 				"dasdasdasdasdasdasdasdasdasdasd"
 			</text>
-			
-			<text class="item-price">
-				<text class="price-unit">Y</text>
-				<text class="price">299</text>
-			</text>
+			<view class="item-price">
+				<text class="price-unit">Y599</text>
+				<text class="price">y299</text>
+			</view>
 		</view>
 		
 	</view>
@@ -20,28 +19,25 @@
 
 <script setup >
 	import {defineProps} from 'vue'
-	let {widthX='50%'} = defineProps(["widthX"])
-	console.log('jieshou',widthX)
+	let {widthX='50%',imgH="400rpx"} = defineProps(["widthX","imgH"])
 </script>
 
 <style lang="scss">
 
 	.card-item{
-		width: 50%;
 		float: left;
+		width: 50%;
 		// margin: 0 10rpx;
 		.item-img{
 			image{
 				width: 100%;
-				height:400rpx
 			}
 		}
 		.item-text{
 			text-align: center;
 			height: 150rpx;
-			text{
+			.item-title{
 				-webkit-font-smoothing: antialiased;
-				list-style: none;
 				margin: 0;
 				padding: 0;
 				text-align: center;
@@ -51,19 +47,6 @@
 				display: -webkit-box;
 				-webkit-line-clamp: 2;
 				-webkit-box-orient: vertical;
-			}
-			.item-price{
-				width: 100%;
-				color: black;
-				.price-unit{
-					width: 50rpx;
-					float: left;
-					margin-left: 80rpx;
-				}
-				.price{
-					width: 80rpx;
-				}
-				
 			}
 		}
 	}

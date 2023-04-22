@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "my-banner": "../Banner/Banner",
+    "my-card-item": "../cardItem/cardItem"
+  }
+}
