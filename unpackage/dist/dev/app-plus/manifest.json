@@ -79,7 +79,7 @@
     },
     "allowsInlineMediaPlayback": true,
     "safearea": {
-      "background": "#008686",
+      "background": "#ffffff",
       "bottom": {
         "offset": "auto"
       }
@@ -101,28 +101,42 @@
     "tabBar": {
       "position": "bottom",
       "color": "#897680",
-      "selectedColor": "#007aff",
+      "selectedColor": "#aa0000",
       "borderStyle": "rgba(0,0,0,0.4)",
       "blurEffect": "none",
       "fontSize": "10px",
       "iconWidth": "24px",
       "spacing": "3px",
       "height": "50px",
-      "backgroundColor": "#008686",
+      "backgroundColor": "#ffffff",
       "list": [
         {
+          "pagePath": "pages/index/index",
+          "iconPath": "/static/tabbar/首页.png",
+          "text": "首页"
+        },
+        {
           "pagePath": "pages/list/list",
-          "iconPath": "/static/首页.png",
-          "text": "组件"
+          "iconPath": "/static/tabbar/fenlei.png",
+          "text": "分类"
         },
         {
           "pagePath": "pages/shopcar/index",
-          "iconPath": "/static/首页.png",
-          "text": "接口"
+          "iconPath": "/static/tabbar/gouwuche.png",
+          "text": "购物车"
+        },
+        {
+          "pagePath": "pages/my/my",
+          "iconPath": "/static/tabbar/wode.png",
+          "text": "我的"
         }
       ],
       "selectedIndex": 0,
-      "shown": true
+      "shown": true,
+      "child": [
+        "lauchwebview"
+      ],
+      "selected": 0
     }
   },
   "launch_path": "__uniappview.html"

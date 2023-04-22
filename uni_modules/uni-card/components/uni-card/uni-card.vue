@@ -107,7 +107,7 @@
 			border: {
 				type: Boolean,
 				default: true
-			}
+			}  
 		},
 		methods: {
 			onClick(type) {

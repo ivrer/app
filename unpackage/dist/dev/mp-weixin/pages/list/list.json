@@ -3,6 +3,11 @@
   "navigationBarBackgroundColor": "#ffffff",
   "navigationStyle": "custom",
   "usingComponents": {
+    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-section": "../../uni_modules/uni-section/components/uni-section/uni-section",
+    "uni-fab": "../../uni_modules/uni-fab/components/uni-fab/uni-fab",
+    "uni-popup-dialog": "../../uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog",
+    "uni-popup": "../../uni_modules/uni-popup/components/uni-popup/uni-popup",
     "my-nav-bar": "../../components/navbar/index"
   }
 }

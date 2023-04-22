@@ -1,8 +1,9 @@
 <template>
-	<view class="">
+	<view>
 		<!-- #ifdef MP-WEIXIN -->
 				<MyNavBar></MyNavBar>
 		<!-- #endif -->
+
 		
 		<uni-card :is-shadow="false" is-full title="组件卡片">
 			<text class="uni-h6">该页面展示uni内置组件的利用，以及外置组件库的使用，配合一些api实现相应的功能</text>
@@ -14,188 +15,137 @@
 		</uni-section>
 		
 		<uni-fab
-			:pattern="pattern"
+		:pattern="status.fab.pattern"
 			:content="content"
-			:horizontal="horizontal"
-			:vertical="vertical"
-			:direction="direction"
+			horizontal="left"
+			vertical="bottom"
+			direction="horizontal"
+			:MyfabShow = "status.fab.fabShow"
 			@trigger="trigger"
+			@fabClick="fabClick"
 		></uni-fab>
+		
+		<button  @click="clearTrigger" >修改fab组件,进行自定义操控</button>
+		<button  @click="download" >操控</button>
+		<image :src="status.uploadImg.src" mode=""></image>
+		<!-- 提示窗口 -->
+		<uni-popup ref="alertDialog" type="dialog">
+			<uni-popup-dialog type="success" cancelText="关闭" confirmText="同意" title="通知" content="确认下载该文件吗？" @confirm="dialogConfirm"
+				@close="dialogClose"></uni-popup-dialog>
+		</uni-popup>
 	</view>
 </template>
 
 <script setup>
 	import MyNavBar from '@/components/navbar/index.vue';
-	import {defineComponent, reactive} from 'vue'
+	import {defineComponent, reactive,ref} from 'vue'
 	defineComponent({MyNavBar})
-	// uni.chooseImage({
-	// 	success: (chooseImageRes) => {
-	// 		const tempFilePaths = chooseImageRes.tempFilePaths;
-	// 		uni.uploadFile({
-	// 			url: 'https://www.example.com/upload', //仅为示例，非真实的接口地址
-	// 			filePath: tempFilePaths[0],
-	// 			name: 'file',
-	// 			formData: {
-	// 				'user': 'test'
-	// 			},
-	// 			success: (uploadFileRes) => {
-	// 				console.log(uploadFileRes.data);
-	// 			}
-	// 		});
-	// 	}
-	// });
+	let alertDialog = ref(null)
+	
+	let status = reactive({
+		fab:{
+			fabShow:true,
+			pattern: {
+				color: '#7A7E83',
+				backgroundColor: '#fff',
+				selectedColor: '#007AFF',
+				buttonColor: '#fff',
+				iconColor: '#000000'
+			},
+		},
+		uploadImg:{
+			src:"/static/images/upload.jpg"
+		}
+	})
+	let content = [
+					{
+						iconPath: '/static/images/album.png',
+						selectedIconPath: '/static/images/album.png',
+						text: '相册',
+						active: false
+				    },
+					{
+						iconPath: '/static/images/fav.png',
+						selectedIconPath: '/static/images/fav.png',
+						text: '收藏',
+						active: false
+					},
+					{
+						iconPath: '/static/images/download.png',
+						selectedIconPath: '/static/images/download.png',
+						text: '下载',
+						active: false
+					},
+						
+		         ]
+				 
+	let trigger=(event)=>{
+		console.log('trigger',event)
+		if(event.index===0){
+			uni.chooseImage({
+				success: (chooseImageRes) => {
+					const tempFilePaths = chooseImageRes.tempFilePaths;
+					console.log(chooseImageRes, 'chooseImageRes')
+					status.uploadImg.src  = chooseImageRes.tempFilePaths[0]
+
+					
+					// uni.uploadFile({
+					// 	url: 'https://www.example.com/upload', //仅为示例，非真实的接口地址
+					// 	filePath: tempFilePaths[0],
+					// 	name: 'file',
+					// 	formData: {
+					// 		'user': 'test'
+					// 	},
+					// 	success: (uploadFileRes) => {
+					// 		console.log(uploadFileRes.data);
+					// 	}
+					// });
+				}
+			});
+		}
+	}
+	let fabClick=(event)=>{
+		console.log(event,'fabClick')
+	}
+	let clearTrigger = ()=>{
+		console.log('clearTrigger')
+		status.fab.fabShow = !status.fab.fabShow
+		console.log(status.fab.fabShow,'fabshow')
+
+	}
+	let dialogConfirm = (value)=>{
+		console.log(value,'confirm')
+	}
+	let dialogClose = (value)=>{
+		console.log(value,'close')
+	}
+	let download = ()=>{
+		let url = status.uploadImg.src
+		uni.getSystemInfo({success:(res)=>{
+			 let result = res
+			downloadFile(result)}})
+		
+		function downloadFile(res){
+			if(res.platForm){}
+		}
+		alertDialog.value.open()
+		// uni.downloadFile({
+		// 	url:url,
+		// 	success:(res)=>{
+		// 		let filePath = res.tempFilePath
+		// 		uni.openDocument({
+		// 			filePath:filePath,
+		// 			success:()=>{
+		// 				console.log('打开路径')
+		// 			}
+		// 		})
+		// 	}
+		// })
+	}
 	
 </script>
 
 <style lang="scss" scoped>
 	
-	$uni-border-3: #EBEEF5 !default;
-	$uni-shadow-base:0 0px 6px 1px rgba($color: #a5a5a5, $alpha: 0.2) !default;
-	$uni-main-color: #3a3a3a !default;
-	$uni-base-color: #6a6a6a !default;
-	$uni-secondary-color: #909399 !default;
-	$uni-spacing-sm: 8px !default;
-	$uni-border-color:$uni-border-3;
-	$uni-shadow: $uni-shadow-base;
-	$uni-card-title: 15px;
-	$uni-cart-title-color:$uni-main-color;
-	$uni-card-subtitle: 12px;
-	$uni-cart-subtitle-color:$uni-secondary-color;
-	$uni-card-spacing: 10px;
-	$uni-card-content-color: $uni-base-color;
-	
-	::deep .uni-card {
-		margin: $uni-card-spacing;
-		padding: 0 $uni-spacing-sm;
-		border-radius: 4px;
-		overflow: hidden;
-		font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
-		background-color: #fff;
-		flex: 1;
-	
-		.uni-card__cover {
-			position: relative;
-			margin-top: $uni-card-spacing;
-			flex-direction: row;
-			overflow: hidden;
-			border-radius: 4px;
-			.uni-card__cover-image {
-				flex: 1;
-				// width: 100%;
-				/* #ifndef APP-PLUS */
-				vertical-align: middle;
-				/* #endif */
-			}
-		}
-	
-		.uni-card__header {
-			display: flex;
-			border-bottom: 1px $uni-border-color solid;
-			flex-direction: row;
-			align-items: center;
-			padding: $uni-card-spacing;
-			overflow: hidden;
-	
-			.uni-card__header-box {
-				/* #ifndef APP-NVUE */
-				display: flex;
-				/* #endif */
-				flex: 1;
-				flex-direction: row;
-				align-items: center;
-				overflow: hidden;
-			}
-	
-			.uni-card__header-avatar {
-				width: 40px;
-				height: 40px;
-				overflow: hidden;
-				border-radius: 5px;
-				margin-right: $uni-card-spacing;
-				.uni-card__header-avatar-image {
-					flex: 1;
-					width: 40px;
-					height: 40px;
-				}
-			}
-	
-			.uni-card__header-content {
-				/* #ifndef APP-NVUE */
-				display: flex;
-				/* #endif */
-				flex-direction: column;
-				justify-content: center;
-				flex: 1;
-				// height: 40px;
-				overflow: hidden;
-	
-				.uni-card__header-content-title {
-					font-size: $uni-card-title;
-					color: $uni-cart-title-color;
-					// line-height: 22px;
-				}
-	
-				.uni-card__header-content-subtitle {
-					font-size: $uni-card-subtitle;
-					margin-top: 5px;
-					color: $uni-cart-subtitle-color;
-				}
-			}
-	
-			.uni-card__header-extra {
-				line-height: 12px;
-	
-				.uni-card__header-extra-text {
-					font-size: 12px;
-					color: $uni-cart-subtitle-color;
-				}
-			}
-		}
-	
-		.uni-card__content {
-			padding: $uni-card-spacing;
-			font-size: 14px;
-			color: $uni-card-content-color;
-			line-height: 22px;
-		}
-	
-		.uni-card__actions {
-			font-size: 12px;
-		}
-	}
-	
-	.uni-card--border {
-		border: 1px solid $uni-border-color;
-	}
-	
-	.uni-card--shadow {
-		position: relative;
-		/* #ifndef APP-NVUE */
-		box-shadow: $uni-shadow;
-		/* #endif */
-	}
-	
-	.uni-card--full {
-		margin: 0;
-		border-left-width: 0;
-		border-left-width: 0;
-		border-radius: 0;
-	}
-	
-	/* #ifndef APP-NVUE */
-	.uni-card--full:after {
-		border-radius: 0;
-	}
-	
-	/* #endif */
-	.uni-ellipsis {
-		/* #ifndef APP-NVUE */
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		/* #endif */
-		/* #ifdef APP-NVUE */
-		lines: 1;
-		/* #endif */
-	}
+
 </style>

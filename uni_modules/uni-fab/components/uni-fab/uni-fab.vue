@@ -103,6 +103,10 @@
 			popMenu: {
 				type: Boolean,
 				default: true
+			},
+			MyfabShow:{
+				type:Boolean,
+				default:true
 			}
 		},
 		data() {
@@ -179,6 +183,14 @@
 					this.styles = Object.assign({}, this.styles, val)
 				},
 				deep: true
+			},
+			MyfabShow:{
+				handler(val,oldVal){
+					console.log('uni-fab fabshow')
+					if(val!==oldVal){
+						this.isShow = !this.isShow
+					}
+				}
 			}
 		},
 		created() {
