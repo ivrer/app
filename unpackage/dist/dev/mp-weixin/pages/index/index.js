@@ -16,11 +16,22 @@ const _sfc_main = {
   __name: "index",
   setup(__props) {
     common_vendor.defineComponent({ MySwiper, MyCard, MyNavBar, MyRecommend, MyBanner, MyIcons, MyHot, MyShop, MyTopbar });
+    let status = common_vendor.reactive({ swiperItemHeight: "" });
+    common_vendor.onReady(() => {
+      let view = common_vendor.index.createSelectorQuery().select(".content");
+      console.log(view, "onload view");
+      view.boundingClientRect((data) => {
+        if (data.height) {
+          status.swiperItemHeight = data.height + "px";
+        }
+      }).exec();
+    });
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
           title: "猜你喜欢"
-        })
+        }),
+        b: `${common_vendor.unref(status).swiperItemHeight}`
       };
     };
   }

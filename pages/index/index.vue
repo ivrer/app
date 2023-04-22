@@ -6,9 +6,9 @@
 			<view class="topbar">
 				<MyTopbar></MyTopbar>
 			</view>
-			<swiper class="content-wrap" >
+			<swiper class="content-wrap" :style="{height:`${status.swiperItemHeight}`}">
 				<swiper-item>
-					<view class="content">
+					<view class="content" >
 						<view class="siwper-wrap">
 							<MySwiper></MySwiper>	
 						</view>
@@ -48,10 +48,20 @@
 	import MyHot from '@/components/Hot/Hot.vue'
 	import MyShop from '@/components/common/shop.vue'
 	import MyTopbar from '@/components/Topbar/Topbar.vue'
-	
-	import {defineComponent} from 'vue'
+	import { onReady } from '@dcloudio/uni-app'
+	import {defineComponent, reactive} from 'vue'
 	defineComponent({MySwiper,MyCard,MyNavBar,MyRecommend,MyBanner,MyIcons,MyHot,MyShop,MyTopbar})
-
+	
+	let status = reactive({swiperItemHeight:''})
+	onReady(()=>{
+		let view = uni.createSelectorQuery().select('.content')
+		console.log(view,'onload view')
+		view.boundingClientRect((data)=>{
+			if(data.height){
+				status.swiperItemHeight = data.height + 'px'
+			}
+		}).exec()
+	})
 	
 </script>
 
@@ -64,12 +74,7 @@
 	
 	}
 	.content-wrap{
-		
-		.swiper-item{
-			width: 100%;
-			.content{
-			}
-		}
+		width: 100%;
 	}
 
 

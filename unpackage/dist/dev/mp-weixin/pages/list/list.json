@@ -2,5 +2,7 @@
   "navigationBarTitleText": "new商",
   "navigationBarBackgroundColor": "#ffffff",
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "my-nav-bar": "../../components/navbar/index"
+  }
 }

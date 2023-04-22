@@ -27,6 +27,6 @@
   height: 100rpx;
   width: 100%;
 }
-.content-wrap .swiper-item.data-v-1cf27b2a {
+.content-wrap.data-v-1cf27b2a {
   width: 100%;
 }

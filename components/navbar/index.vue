@@ -22,9 +22,6 @@
 					<!-- 距离微信程序右侧按钮的距离 -->
 				</view>
 			</view>
-			<view class="box" >
-				asdasdasd
-			</view>
 		</view>
 </template>
 
@@ -35,9 +32,7 @@
 </script>
 
 <style lang="scss">
-	.box{
-		background-color: red;
-	}
+
 
 	.nav-wrap{
 

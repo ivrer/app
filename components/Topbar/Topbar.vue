@@ -10,11 +10,15 @@
 
 <script setup>
 import { reactive } from "vue";
+
 	let item = [{"title":"推荐"},{"title":"运动健康"},{"title":"潮流运动"},{"title":"衣物鞋帽"},{"title":"运动健康"},{"title":"潮流运动"},{"title":"运动"}]
 	let status = reactive({"active":0})
 	let changeColor = (index)=>{
 		 status.active = index
 	}
+
+		
+	
 </script>
 
 <style lang="scss">

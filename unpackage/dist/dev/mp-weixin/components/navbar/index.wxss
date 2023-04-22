@@ -23,9 +23,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.box {
-  background-color: red;
-}
 .nav-wrap {
   height: 180rpx;
 }
