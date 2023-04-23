@@ -25,14 +25,13 @@
 /* 文章场景相关 */
 .scroll-wrap {
   width: 100%;
-  height: 50rpx;
   white-space: nowrap;
-  background-color: red;
+  height: 50rpx;
+  border-bottom: solid 1rpx #ccc;
 }
 .scroll-wrap .scroll-item {
   display: inline-block;
   width: 150rpx;
-  background-color: orange;
 }
 .scroll-wrap .scroll-item .peace {
   color: black;

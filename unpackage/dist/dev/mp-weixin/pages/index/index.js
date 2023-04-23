@@ -16,7 +16,15 @@ const _sfc_main = {
   __name: "index",
   setup(__props) {
     common_vendor.defineComponent({ MySwiper, MyCard, MyNavBar, MyRecommend, MyBanner, MyIcons, MyHot, MyShop, MyTopbar });
-    let status = common_vendor.reactive({ swiperItemHeight: "" });
+    let store = common_vendor.useStore();
+    let status = common_vendor.reactive(
+      {
+        swiperItemHeight: "",
+        windowInfo: {
+          screenTop: "100rpx"
+        }
+      }
+    );
     common_vendor.onReady(() => {
       let view = common_vendor.index.createSelectorQuery().select(".content");
       console.log(view, "onload view");
@@ -25,13 +33,36 @@ const _sfc_main = {
           status.swiperItemHeight = data.height + "px";
         }
       }).exec();
+      store.dispatch("getWindowInfo").then(() => {
+        if (store.state.windowInfo) {
+          status.windowInfo.screenTop = store.state.windowInfo.screenTop + "rpx";
+          console.log(store.state.windowInfo, "page state");
+        }
+      });
+      store.dispatch("getSystemInfo");
+      console.group("1");
+      console.log("uni", common_vendor.index);
+      console.log("getCurrentPage", common_vendor.index, getCurrentPages());
+      console.log(
+        "getSystemInfo",
+        common_vendor.index.getSystemInfo({
+          success: function(res) {
+            console.log(res.appName);
+          }
+        })
+      );
+      console.log("getwindowInfo", common_vendor.index.getWindowInfo());
+      console.groupEnd("2");
     });
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
+          screenTop: common_vendor.unref(status).windowInfo.screenTop
+        }),
+        b: common_vendor.p({
           title: "猜你喜欢"
         }),
-        b: `${common_vendor.unref(status).swiperItemHeight}`
+        c: `${common_vendor.unref(status).swiperItemHeight}`
       };
     };
   }

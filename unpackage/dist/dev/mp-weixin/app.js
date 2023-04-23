@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
+const store_index = require("./store/index.js");
+require("./store/home/index.js");
+require("./const/index.js");
 if (!Math) {
   "./pages/index/index.js";
   "./pages/list/list.js";
@@ -21,6 +24,7 @@ const _sfc_main = {
 const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/张小兴/Documents/HBuilderProjects/uniapp-shabi1/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
+  app.use(store_index.store);
   return {
     app
   };

@@ -24,15 +24,11 @@
 /* 透明度 */
 /* 文章场景相关 */
 .nav-wrap {
+  background-color: #fdd100;
   height: 180rpx;
-}
-.nav-wrap .nav-top {
-  background-color: green;
-  height: 90rpx;
 }
 .nav-wrap .nav-content-wrap {
   height: 90rpx;
-  background-color: #FFC300;
   color: black;
 }
 .nav-wrap .nav-content-wrap .nav-content {
@@ -51,13 +47,17 @@
   overflow: hidden;
 }
 .nav-wrap .nav-content-wrap .nav-content .search-wrap {
-  height: 90rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
 }
 .nav-wrap .nav-content-wrap .nav-content .search-wrap .search {
+  background-color: white;
   height: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 1rpx #ccc;
+  border-radius: 30rpx;
 }
 .nav-wrap .nav-content-wrap .nav-content .search-wrap .search #searchIconfont {
   height: 100rpx;
@@ -68,7 +68,6 @@
   margin-left: 10rpx;
   flex: 1 1 basic;
   height: 50rpx;
-  border: solid 1rpx black;
   border-radius: 20rpx;
 }
 .nav-wrap .nav-content-wrap .nav-right {
