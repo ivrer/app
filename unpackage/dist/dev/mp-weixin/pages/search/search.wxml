@@ -1,0 +1,1 @@
+<view><text>asdasd</text></view><uni-popup wx:if="{{c}}" class="r" u-s="{{['d']}}" u-r="share" u-i="5722946f-0" bind:__l="__l" u-p="{{c}}"><uni-popup-message wx:if="{{a}}" u-i="5722946f-1,5722946f-0" bind:__l="__l" u-p="{{a}}"></uni-popup-message></uni-popup>

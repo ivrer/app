@@ -10,11 +10,18 @@ const _sfc_main = {
   },
   setup(__props) {
     const { screenTop } = __props;
+    let goSearch = () => {
+      console.log("route");
+      common_vendor.index.redirectTo({
+        url: "../search/search"
+      });
+    };
     console.log("screenTop:", screenTop);
     return (_ctx, _cache) => {
       return {
         a: `${__props.screenTop}`,
-        b: common_vendor.t("newPin")
+        b: common_vendor.t("newPin"),
+        c: common_vendor.o((...args) => common_vendor.unref(goSearch) && common_vendor.unref(goSearch)(...args))
       };
     };
   }

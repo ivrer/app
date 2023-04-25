@@ -14,7 +14,7 @@
 						<view class="search">
 							<view class="iconfont icon-sousuo" id="searchIcon">	
 							</view>
-							<input type="text" class="search-input" placeholder="请输入搜索">
+							<input type="text" class="search-input" placeholder="请输入搜索" @click="goSearch">
 						</view>
 					</view>
 				</view>
@@ -34,6 +34,12 @@
 			default:"100rpx"
 		}
 	})
+	let goSearch = ()=>{
+		console.log("route")
+		uni.redirectTo({
+			url:"../search/search"
+		})
+	}
   	console.log('screenTop:', screenTop)
 
 </script>

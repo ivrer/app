@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/list/list",
     "pages/shopcar/index",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/search/search"
   ],
   "window": {
     "navigationBarTextStyle": "black",
